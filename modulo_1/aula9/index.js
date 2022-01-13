@@ -6,3 +6,5 @@ const num2 = 10.52; // number
 let nomeAluno; // undefined -> não aponta pra local nenhuma na memória
 let sobrenomeAluno = null; // Nulo -> não aponta pra local nenhuma na memória
 const boolean = false; // boolean -> trues, false (lógico)
+
+console.log(typeof nomeAluno, nomeAluno);

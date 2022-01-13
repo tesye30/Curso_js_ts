@@ -1,0 +1,6 @@
+/**
+ * Aritméticos
+ * + Adição / Concatenação
+ *  - / *
+ * 
+ */
