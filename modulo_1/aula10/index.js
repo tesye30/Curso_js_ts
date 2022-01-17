@@ -3,6 +3,8 @@
  * + Adição / Concatenação (- / *)
  *    ** Potenciacao
  *  % Resto da divisao   
+ * 
+ * NaN - Not a number parseInt (inteiro), parseFloat(decimais)
  */
 
 const num1 = 5;
