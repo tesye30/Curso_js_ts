@@ -73,3 +73,8 @@ form button:hover {
     left:0px;
     float: left;
 }
+
+.paragrafo-resultado {
+    background: rgb(109, 255, 182);
+    padding: 10px;
+}
