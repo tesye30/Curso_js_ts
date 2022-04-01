@@ -21,7 +21,7 @@ function criaP (){
 }
 
 function setResultado (msg) {
-    const resultado = document.querySelector(#resultado);
+    const resultado = document.querySelector('#resultado');
     resultado.innerHTML = '';
     const p = document.createElement('p');
     p.classList.add('paragrafo-resultado');
