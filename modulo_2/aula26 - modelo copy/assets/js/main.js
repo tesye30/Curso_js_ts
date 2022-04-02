@@ -13,6 +13,13 @@ form.addEventListener('submit', function (e) {
         setResultado('Peso inválido')
         return;
     }
+
+    if (!altura) {
+        setResultado ('Altura inválida', false);
+        return;
+    }
+    
+    console.log('')
 });
 
 function criaP (){
@@ -20,11 +27,12 @@ function criaP (){
     return p;
 }
 
-function setResultado (msg) {
+function setResultado (msg, isValid) {
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = '';
-    const p = document.createElement('p');
-    p.classList.add('paragrafo-resultado');
-    p.innerHTML = 'Qualquer coisa';
+
+    const p = criaP();
+    
+    p.innerHTML = msg;
     resultado.appendChild(p);
 }
