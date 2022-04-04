@@ -21,7 +21,11 @@ form.addEventListener('submit', function (e) {
     
     const imc = getImc(peso, altura);
     const nivelImc = getNivelImc(imc)
-    console.log(nivelImc);
+
+    const msg = `Seu IMC é ${imc} (${nivelImc}).`;
+
+    setResultado(msg, true);
+    
         
 });
 
@@ -65,8 +69,14 @@ function setResultado (msg, isValid) {
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = '';
 
+        
     const p = criaP();
-    
-    p.innerHTML = msg;
+    if (isValid) {
+        p.classList.add('paragrafo-resultado');
+    } else {
+        p.classList.add('bad');
+
+    }
+        p.innerHTML = msg;
     resultado.appendChild(p);
 }
