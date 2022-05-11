@@ -1,26 +1,26 @@
-const form = document.querySelector('h1');
+const h1 = document.querySelector('.container h1');
+const data = new Date ();
 
-form.addEventListener('h1', function (e) {
-    e.preventDefault();
+function getNomeSe(diaSemana) {
     let diaSemanaTexto;
     switch (diaSemana) {
         case 0:
             diaSemanaTexto = 'Domingo';
         return diaSemanaTexto;
         case 1:
-            diaSemanaTexto = 'Segunda';
+            diaSemanaTexto = 'Segunda-Feira';
         return diaSemanaTexto;
         case 2:
-            diaSemanaTexto = 'Terça';
+            diaSemanaTexto = 'Terça-Feira';
         return diaSemanaTexto;
         case 3:
-            diaSemanaTexto = 'Quarta';
+            diaSemanaTexto = 'Quarta-Feira';
         return diaSemanaTexto;
         case 4:
-            diaSemanaTexto = 'Quinta';
+            diaSemanaTexto = 'Quinta-Feira';
         return diaSemanaTexto;
         case 5:
-            diaSemanaTexto = 'Sexta';
+            diaSemanaTexto = 'Sexta-Feira';
         return diaSemanaTexto;
         case 6:
             diaSemanaTexto = 'Sabado';
@@ -29,8 +29,10 @@ form.addEventListener('h1', function (e) {
             diaSemanaTexto = '';
     }
 
+}
+function getNomeMes(numMes) {
     let mesTexto;
-    switch (mesTexto){
+    switch (numMes){
         case 0:
             mesTexto = 'Janeiro';
         return mesTexto;
@@ -70,15 +72,21 @@ form.addEventListener('h1', function (e) {
         default:
             mesTexto = '';
     }
+}
 
-    const data = new Date();
-    const dia = data.getDate();
-    const hora = data.getHours();
-    const min = data.getMinutes();
-    const ano = data.getFullYear();
+function criaData(data) {
+   
+    const numMes = data.getMonth();
+    const diaSemana = data.getDay();
+
+    const nomeMes = getNomeMes(numMes);
+    const diaSema = getNomeSe(diaSemana);
 
 
-    const msg = `${diaSemanaTexto},${dia} de ${mesTexto} de ${ano} ${hora}:${min} `;
-    msg.appendChild();
-});
+    return  (`${diaSema},${data.getDate()} de ${nomeMes} 
+    de ${data.getFullYear()} às ${data.getHours()}:${data.getMinutes()} `
+    );
+}
+
+h1.innerHTML = criaData(data);
 
