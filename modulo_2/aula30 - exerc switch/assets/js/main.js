@@ -31,51 +31,16 @@ function getNomeSe(diaSemana) {
 
 }
 function getNomeMes(numMes) {
-    let mesTexto;
-    switch (numMes){
-        case 0:
-            mesTexto = 'Janeiro';
-        return mesTexto;
-        case 1:
-            mesTexto = 'Fevereiro';
-        return mesTexto;
-        case 2:
-            mesTexto = 'Março';
-        return mesTexto;
-        case 3:
-            mesTexto = 'Abril';
-        return mesTexto;
-        case 4:
-            mesTexto = 'Maio';
-        return mesTexto;
-        case 5:
-            mesTexto = 'Junho';
-        return mesTexto;
-        case 6:
-            mesTexto = 'Julho';
-        return mesTexto;
-        case 7:
-            mesTexto = 'Agosto';
-        return mesTexto;
-        case 8:
-            mesTexto = 'Setembro';
-        return mesTexto;
-        case 9:
-            mesTexto = 'Outubro';
-        return mesTexto;
-        case 10:
-            mesTexto = 'Novembro';
-        return mesTexto;
-        case 11:
-            mesTexto = 'Dezembro';
-        return mesTexto;
-        default:
-            mesTexto = '';
-    }
+   const meses = ['janeiro', 'feveireiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+   return meses[numMes];
+}
+
+function zeroAEsquerda (num){
+    return num >= 10 ? num : `0${num}`;
 }
 
 function criaData(data) {
-   
+
     const numMes = data.getMonth();
     const diaSemana = data.getDay();
 
@@ -83,10 +48,21 @@ function criaData(data) {
     const diaSema = getNomeSe(diaSemana);
 
 
-    return  (`${diaSema},${data.getDate()} de ${nomeMes} 
-    de ${data.getFullYear()} às ${data.getHours()}:${data.getMinutes()} `
+    return  (`${diaSema},${data.getDate()} de ${nomeMes}
+    de ${data.getFullYear()} às ${zeroAEsquerda(data.getHours())}:${zeroAEsquerda(data.getMinutes())} `
     );
 }
 
 h1.innerHTML = criaData(data);
 
+
+//////////////////////////////////////////////////////////
+//  const h1 = document.querySelector('.container h1');
+//  const data = new Date ();
+//  const opcoes = {
+//      dateStyle: 'full',
+//      timeStyle: 'short'
+//  };
+
+//  h1.innerHTML = data.toLocaleDateString('pt-BR', {dateStyle: 'full', timeStyle:'short'});
+ ////////////////////////////////////////////////////////
