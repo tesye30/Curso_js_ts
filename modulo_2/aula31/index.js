@@ -9,6 +9,15 @@ var nome2 = "Luiz";
 
 
 if (verdadeira){
-
-    console.log(nome, nome2)
+    var nome2 = "Carlos";
+    let nome = 'Otavio';
+    
+    
+    if (verdadeira){
+        var nome2 = "Pedro";
+        let nome = 'teste testse';
+        
+    }
 }
+
+console.log(nome, nome2);
