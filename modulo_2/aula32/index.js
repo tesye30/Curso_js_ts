@@ -1,5 +1,5 @@
 //             0  1  2  3  4  5  6  7  8          
-const numeros = [10000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000];
+const numeros = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
 
-const [um, dois, tres ] = numeros;
-console.log(um, dois, tres );
+const [lista1, lista2, lista3] = numeros;
+console.log(lista2[1] );
